@@ -1,47 +1,249 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
+
 <head>
   <meta charset="UTF-8">
-  <title>Profiel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #FFB770;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      position: relative;
+      padding-top: 40px;
+    }
+
+    /* 左上角返回按钮 */
+    .top-left,
+    .top-right {
+      position: absolute;
+      top: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .top-left {
+      left: 10px;
+    }
+
+    .top-right {
+      right: 10px;
+    }
+
+    .top-left img,
+    .top-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .top-left:hover,
+    .top-right:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .top-left:active,
+    .top-right:active {
+      transform: scale(0.95);
+    }
+
+    /* 右边的过滤和查找图标 */
+    .icons {
+      display: inline-flex;
+      gap: 20px;
+      margin-left: 20px;
+    }
+
+    .icons img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    /* Profile Section */
+    .profile {
+      width: 80%;
+      max-width: 1000px;
+      margin: 0 auto;
+      margin-top: 60px;
+      background: #FEED8D;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      height: 70vh;
+      /* 设置高度为70%视口高度 */
+      overflow-y: auto;
+      /* 如果内容超过高度，允许滚动 */
+    }
+
+    .profile .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      object-fit: cover;
+      border: 3px solid #FFB770;
+    }
+
+    .profile .username {
+      font-size: 26px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .profile .section-title {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .profile .history,
+    .profile .my-plan {
+      background-color: #FFB770;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .history .win,
+    .history .lose {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .history .win {
+      color: green;
+    }
+
+    .history .lose {
+      color: red;
+    }
+
+    .history .win-lose {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      color: #666;
+    }
+
+    .history .avatars {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .history .avatar-item {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #FEED8D;
+      overflow: hidden;
+    }
+
+    .history .avatar-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .my-plan {
+      font-size: 16px;
+      color: #333;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .profile {
+        width: 90%;
+      }
+
+      .history {
+        flex-direction: column;
+      }
+
+      .history .item {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <a href="index.html">terug</a>
-  <div style="margin-top:20px; text-align:center;">
-    <table align="center" border="0">
-      <tr>
-        <td rowspan="2">
-          <img src="profilefoto.jpg" alt="Profile Foto" width="150" height="150">
-        </td>
-        <td>
-          <input type="text" placeholder="Username">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <img src="badge1.jpg" alt="Badge 1" width="50" height="50">
-          <img src="badge2.jpg" alt="Badge 2" width="50" height="50">
-          <img src="badge3.jpg" alt="Badge 3" width="50" height="50">
-          <img src="badge4.jpg" alt="Badge 4" width="50" height="50">
-        </td>
-      </tr>
-    </table>
+
+  <!-- 左上角返回按钮 -->
+  <a href="index.html" class="top-left">
+    <img src="img/terug.png" alt="Back" width="50">
+  </a>
+
+  <!-- 右上角 Collection Page 按钮 -->
+  <a href="collection.html" class="top-right">
+    <img src="img/pikachu.avif" alt="Collection Page" width="50">
+  </a>
+
+  <!-- Profile Section -->
+  <div class="profile">
+    <img src="img/whos that pokemon.jpg" alt="User Avatar" class="avatar">
+    <div class="username">Username</div>
+
+    <!-- Win and Lose History -->
+    <div class="history">
+      <div class="win">Win History</div>
+      <div class="win-lose">
+        <span>Game 1</span><span>Win</span>
+      </div>
+      <div class="win-lose">
+        <span>Game 2</span><span>Win</span>
+      </div>
+      <div class="lose">Lose History</div>
+      <div class="win-lose">
+        <span>Game 1</span><span>Lose</span>
+      </div>
+      <div class="win-lose">
+        <span>Game 2</span><span>Lose</span>
+      </div>
+
+      <!-- Avatar History -->
+      <div class="avatars">
+        <div class="avatar-item">
+          <img src="img/bulbasaur.png" alt="Bulbasaur">
+        </div>
+        <div class="avatar-item">
+          <img src="img/charmander.webp" alt="Charmander">
+        </div>
+        <div class="avatar-item">
+          <img src="img/squirtle.png" alt="Squirtle">
+        </div>
+      </div>
+    </div>
+
+    <!-- My Plan Section -->
+    <div class="my-plan">
+      <div class="section-title">My Plan</div>
+      <p>Here you can track your future goals and progress. Focus on your next target to improve!</p>
+    </div>
   </div>
-  <div style="margin-top:20px; text-align:center;">
-    <table align="center" border="1" cellspacing="0" cellpadding="10">
-      <tr>
-        <td valign="top">mijlpalen</td>
-        <td>
-          <table border="0" cellspacing="0" cellpadding="5">
-            <tr>
-              <td>win/loss rate</td>
-            </tr>
-            <tr>
-              <td>recente activiteiten</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </div>
+
 </body>
+
 </html>

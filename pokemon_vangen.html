@@ -1,20 +1,183 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
+
 <head>
   <meta charset="UTF-8">
-  <title>Pokemon Vangen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Pokemon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #FFB770 70%, #FAC642 30%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    /* 左上角返回按钮 */
+    .top-left,
+    .top-right {
+      position: absolute;
+      top: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .top-left {
+      left: 10px;
+    }
+
+    .top-right {
+      right: 10px;
+    }
+
+    .top-left img,
+    .top-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .top-left:hover,
+    .top-right:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .top-left:active,
+    .top-right:active {
+      transform: scale(0.95);
+    }
+
+    /* Get a Pokemon Logo */
+    .logo {
+      font-size: 50px;
+      font-weight: bold;
+      color: #333;
+      margin-top: -50px;
+      margin-bottom: 40px;
+    }
+
+    /* Pokemon container */
+    .pokemon-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 50px;
+      gap: 20px;
+    }
+
+    /* Pokeball container */
+    .pokemon-container .pokeball {
+      position: relative;
+      width: 40vw;
+      /* Set the Pokeball width to 40% of the page */
+      height: 40vw;
+      max-width: 300px;
+      max-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Pokemon image inside Pokeball */
+    .pokemon-container .pokeball img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Overlaid Pokemon Image */
+    .pokemon-container .pokeball .pokemon-img {
+      position: absolute;
+      width: 60%;
+      /* Set Pokemon image to 60% of Pokeball size */
+      height: 60%;
+      object-fit: contain;
+      z-index: 2;
+      /* Ensure Pokemon image is on top */
+    }
+
+    /* Text box for Pokemon Extraction */
+    .extraction-box {
+      position: absolute;
+      top: 120px;
+      right: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    /* Logo on bottom right */
+    .logo-footer {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+    }
+
+    .logo-footer img {
+      width: 200px;
+      /* Increased width for bottom logo */
+      height: auto;
+      object-fit: cover;
+    }
+  </style>
 </head>
+
 <body>
-  <div>
-    <a href="index.html">terug</a>
+
+  <!-- 左上角返回按钮 -->
+  <a href="index.html" class="top-left">
+    <img src="img/terug.png" alt="Back" width="50">
+  </a>
+
+  <!-- 右上角 Collection Page 按钮 -->
+  <a href="collection.html" class="top-right">
+    <img src="img/pikachu.avif" alt="Collection Page" width="50">
+  </a>
+
+  <!-- Get a Pokemon 字体 Logo -->
+  <div class="logo">
+    GET A POKEMON
   </div>
-  
-  <div style="text-align: center; margin-top: 20px;">
-    <img src="pokemon_catch.jpg" alt="Pokemon to Catch" width="300" height="300">
-    <div style="margin-top: 10px;">
-      <button>groene pokeball (vrij laten)</button>
-      <button>rode pokeball (vangen)</button>
+
+  <!-- Pokemon container -->
+  <div class="pokemon-container">
+    <div class="pokeball">
+      <!-- Replace this with your image for the Pokeball -->
+      <img src="img/Open-Pokeball-512.webp" alt="Pokeball">
+      <!-- Pokemon Image Overlaid (60% size) -->
+      <img src="img/whos that pokemon.jpg" alt="Pokemon" class="pokemon-img">
     </div>
   </div>
+
+  <!-- Pokemon Extraction Text Box -->
+  <div class="extraction-box">
+    POKEMON EXTRACTION
+  </div>
+
+  <!-- Logo footer -->
+  <div class="logo-footer">
+    <img src="img/pokemon logo.png" alt="Footer Logo">
+  </div>
+
 </body>
+
 </html>

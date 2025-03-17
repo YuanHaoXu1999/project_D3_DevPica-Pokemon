@@ -1,20 +1,181 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Who's That Pokemon?</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #FFB770;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* 左上角返回按钮 */
+    .top-left,
+    .top-right {
+      position: absolute;
+      top: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      /* 圆形按钮 */
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .top-left {
+      left: 10px;
+    }
+
+    .top-right {
+      right: 10px;
+    }
+
+    .top-left img,
+    .top-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 鼠标悬停时的效果 */
+    .top-left:hover,
+    .top-right:hover {
+      transform: scale(1.1);
+      /* 放大 */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      /* 阴影效果 */
+    }
+
+    .top-left:active,
+    .top-right:active {
+      transform: scale(0.95);
+      /* 点击时缩小 */
+    }
+
+    /* 主要容器 */
+    .container {
+      width: 80%;
+      height: 70%;
+      max-width: 1200px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    /* 页面标题 */
+    .title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    /* Pokemon 图片框 */
+    .pokemon-image-container {
+      width: 100%;
+      height: 40vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .pokemon-image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+    }
+
+    /* 链接容器 */
+    .links-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .link-box {
+      width: 200px;
+      height: 60px;
+      background-color: #FFD700;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .link-box:hover {
+      transform: scale(1.05);
+      /* 放大 */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      /* 阴影效果 */
+    }
+
+    .link-box:active {
+      transform: scale(0.95);
+      /* 点击时缩小 */
+    }
+
+    @media (max-width: 768px) {
+      .links-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div>
-    <a href="index.html">terug</a>
-  </div>
-  
-  <div style="text-align: center; margin-top: 20px;">
-    <h1>Who's that Pokemon?</h1>
-    <img src="whos_that.jpg" alt="Who's that Pokemon?" width="300" height="300">
-    <div style="margin-top: 10px;">
-      <input type="text" placeholder="vul pokemon naam in">
+
+  <!-- 左上角返回按钮 -->
+  <a href="index.html" class="top-left">
+    <img src="img/terug.png" alt="Back">
+  </a>
+
+  <!-- 右上角 Collection Page 按钮 -->
+  <a href="collection.html" class="top-right">
+    <img src="img/pikachu.avif" alt="Collection Page">
+  </a>
+
+  <div class="container">
+    <!-- 页面标题 -->
+    <div class="title">Who's That Pokemon?</div>
+
+    <!-- Pokemon 图片框 -->
+    <div class="pokemon-image-container">
+      <img src="img/whos that pokemon.jpg" alt="Charmander">
+    </div>
+
+    <!-- Pokemon 链接 -->
+    <div class="links-container">
+      <a href="pokemon1.html" class="link-box">Bulbasaur</a>
+      <a href="pokemon2.html" class="link-box">Charmander</a>
+      <a href="pokemon3.html" class="link-box">Squirtle</a>
+      <a href="pokemon4.html" class="link-box">Pikachu</a>
     </div>
   </div>
-</body> 
+
+</body>
+
 </html>

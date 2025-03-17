@@ -1,29 +1,234 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
+
 <head>
   <meta charset="UTF-8">
-  <title>Vergelijken Knop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Pokemon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #FFB770;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* 左上角返回按钮 */
+    .top-left,
+    .top-right {
+      position: absolute;
+      top: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      /* 圆形按钮 */
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .top-left {
+      left: 10px;
+    }
+
+    .top-right {
+      right: 10px;
+    }
+
+    .top-left img,
+    .top-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 鼠标悬停时的效果 */
+    .top-left:hover,
+    .top-right:hover {
+      transform: scale(1.1);
+      /* 放大 */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      /* 阴影效果 */
+    }
+
+    .top-left:active,
+    .top-right:active {
+      transform: scale(0.95);
+      /* 点击时缩小 */
+    }
+
+    /* 主要容器 */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* 页面标题 */
+    .title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    /* 比较区域 */
+    .compare-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      gap: 40px;
+    }
+
+    /* 每个比较框的样式 */
+    .compare-box {
+      width: 30%;
+      text-align: center;
+    }
+
+    .compare-box select {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .pokemon-image-container {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .pokemon-image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+    }
+
+    .pokemon-data {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 18px;
+      color: #333;
+      text-align: left;
+      min-height: 100px;
+    }
+
+    /* 中间的VS图片 */
+    .vs-container {
+      width: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .vs-container img {
+      width: 80px;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .compare-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .compare-box {
+        width: 80%;
+        margin-bottom: 30px;
+      }
+
+      .vs-container {
+        margin: 20px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div>
-    <a href="index.html">terug</a>
+
+  <!-- 左上角返回按钮 -->
+  <a href="index.html" class="top-left">
+    <img src="img/terug.png" alt="Back">
+  </a>
+
+  <!-- 右上角 Collection Page 按钮 -->
+  <a href="collection.html" class="top-right">
+    <img src="img/pikachu.avif" alt="Collection Page">
+  </a>
+
+  <div class="container">
+    <!-- 页面标题 -->
+    <div class="title">Compare Pokemon</div>
+
+    <!-- 比较区域 -->
+    <div class="compare-container">
+      <!-- 左边 Pokemon 选择框 -->
+      <div class="compare-box">
+        <select>
+          <option>Select Pokemon 1</option>
+          <option>Pikachu</option>
+          <option>Charmander</option>
+          <option>Bulbasaur</option>
+        </select>
+        <div class="pokemon-image-container">
+          <img src="img/pikachu.avif" alt="Pokemon 1">
+        </div>
+        <div class="pokemon-data">
+          Type: Electric<br>
+          Height: 0.4 m<br>
+          Weight: 6.0 kg
+        </div>
+      </div>
+
+      <!-- VS 图片 -->
+      <div class="vs-container">
+        <img src="img/compare.png" alt="VS">
+      </div>
+
+      <!-- 右边 Pokemon 选择框 -->
+      <div class="compare-box">
+        <select>
+          <option>Select Pokemon 2</option>
+          <option>Charmander</option>
+          <option>Pikachu</option>
+          <option>Bulbasaur</option>
+        </select>
+        <div class="pokemon-image-container">
+          <img src="img/charmander.webp" alt="Pokemon 2">
+        </div>
+        <div class="pokemon-data">
+          Type: Fire<br>
+          Height: 0.6 m<br>
+          Weight: 8.5 kg
+        </div>
+      </div>
+    </div>
   </div>
-  
-  <div style="text-align: center; margin-top: 20px;">
-    <table align="center">
-      <tr>
-        <td style="padding: 10px;">
-          <h3>Pokemon 1 Name</h3>
-          <img src="pokemon1.jpg" alt="Pokemon 1" width="150" height="150"><br>
-          <p>Pokemon 1 Status</p>
-        </td>
-        <td style="padding: 10px;">
-          <h3>Pokemon 2 Name</h3>
-          <img src="pokemon2.jpg" alt="Pokemon 2" width="150" height="150"><br>
-          <p>Pokemon 2 Status</p>
-        </td>
-      </tr>
-    </table>
-  </div>
+
 </body>
+
 </html>

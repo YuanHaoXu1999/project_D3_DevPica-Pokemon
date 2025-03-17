@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 上方90% 背景图片 */
+        .background {
+            height: 90%;
+            background-image: url('img/images.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* 在背景图片左下角的文字 */
+        .background .loading-text {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            font-size: 90px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* 下方10%背景颜色 */
+        .bottom-background {
+            height: 10%;
+            background-color: #89E4B7;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        /* 在下方背景区域左侧的文字 */
+        .bottom-background .tips-text {
+            font-size: 70px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* 居中的 Logo 图片 */
+        .logo {
+            position: absolute;
+            top: 5%;
+            /* 调整位置使其更靠近页面上方 */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2500x;
+            /* 放大 Logo 图片 */
+        }
+
+        /* 居中的 Pokemon 群的图片 */
+        .pokemon-group {
+            position: absolute;
+            top: 55%;
+            /* 调整位置使其更靠近页面中央 */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1300px;
+            /* 放大 Pokemon 群图片 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 上方背景图片 -->
+    <div class="background">
+        <!-- Loading 文本 -->
+        <div class="loading-text">loading...</div>
+
+        <!-- 居中的 Logo 图片 -->
+        <img src="img/pokemon logo.png" alt="Logo" class="logo">
+
+        <!-- 居中的 Pokemon 群图片 -->
+        <img src="img/hero-img.png" alt="Pokemon Group" class="pokemon-group">
+    </div>
+
+    <!-- 下方背景颜色 -->
+    <div class="bottom-background">
+        <!-- Tips 文本 -->
+        <div class="tips-text">tips</div>
+    </div>
+
+</body>
+
+</html>
