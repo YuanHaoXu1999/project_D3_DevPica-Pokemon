@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #FFB770;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .top-right {
+      position: absolute;
+      top: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      /* 圆形按钮 */
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .top-right {
+      right: 10px;
+    }
+
+    .top-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 鼠标悬停时的效果 */
+    .top-right:hover {
+      transform: scale(1.1);
+      /* 放大 */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      /* 阴影效果 */
+    }
+
+    .top-right:active {
+      transform: scale(0.95);
+      /* 点击时缩小 */
+    }
+
+    .logo {
+      width: 400px;
+      /* LOGO 变大 */
+      height: auto;
+      margin-bottom: 40px;
+      /* 增加间距 */
+      margin-top: -50px;
+      /* LOGO 上移 */
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .menu img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .menu img:hover {
+      transform: scale(1.1);
+    }
+
+    .menu span {
+      margin-top: 5px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .menu img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- 右上角 Collection Page 按钮 -->
+  <a href="collection.html" class="top-right">
+    <img src="img/pikachu.avif" alt="Collection Page" width="50">
+  </a>
+
+  <!-- 中间 LOGO -->
+  <img src="img/pokemon logo.png" alt="Logo" class="logo">
+
+  <!-- 菜单栏 -->
+  <div class="menu">
+    <a href="profiel.html">
+      <img src="img/pikachu.avif" alt="My Profile">
+      <span>My Profile</span>
+    </a>
+    <a href="collection.html">
+      <img src="img/pokemon bal.jpg" alt="Collection">
+      <span>Collection</span>
+    </a>
+    <a href="map.html">
+      <img src="img/map.png" alt="Map">
+      <span>Map</span>
+    </a>
+    <a href="whos_that_pokemon.html">
+      <img src="img/whos that pokemon.jpg" alt="Who's that Pokémon">
+      <span>Who's that Pokémon</span>
+    </a>
+    <a href="vergelijken.html">
+      <img src="img/compare.jpg" alt="Compare">
+      <span>Compare</span>
+    </a>
+  </div>
+
+</body>
+
+</html>

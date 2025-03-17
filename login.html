@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 页面背景 */
+        body {
+            background-color: #FFB770;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* 左上角返回按钮 */
+        .top-left, .top-right {
+            position: absolute;
+            top: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* 圆形按钮 */
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .top-left {
+            left: 10px;
+        }
+
+        .top-right {
+            right: 10px;
+        }
+
+        .top-left img, .top-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 鼠标悬停时的效果 */
+        .top-left:hover, .top-right:hover {
+            transform: scale(1.1); /* 放大 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+        }
+
+        .top-left:active, .top-right:active {
+            transform: scale(0.95); /* 点击时缩小 */
+        }
+        /* 登录框 */
+        .login-box {
+            background: #fff;
+            padding: 40px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* logo 图片 */
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        /* 输入框样式 */
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        /* 登录按钮 */
+        .login-btn {
+            background-color: #FF914D;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .login-btn:hover {
+            background-color: #E07B3A;
+        }
+
+        .forgot-password {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 左上角：返回主页面 -->
+    <a href="index.html">
+        <img src="img/terug.png" alt="主页" class="nav nav-left">
+    </a>
+
+    <!-- 右上角：前往 Collection 页面 -->
+    <a href="collection.html">
+        <img src="img/pikachu.avif" alt="收藏" class="nav nav-right">
+    </a>
+
+    <!-- 登录框 -->
+    <div class="login-box">
+        <img src="img/pokemon.jpg" alt="Logo" class="logo">
+        <h2>Login</h2>
+        <input type="text" class="input-box" placeholder="username">
+        <input type="password" class="input-box" placeholder="password">
+        <button class="login-btn">Login</button>
+        <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
+    </div>
+
+</body>
+
+</html>

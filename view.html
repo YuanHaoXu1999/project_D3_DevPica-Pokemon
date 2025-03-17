@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FFB770;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* 左上角返回按钮 */
+        .top-left, .top-right {
+            position: absolute;
+            top: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* 圆形按钮 */
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .top-left {
+            left: 10px;
+        }
+
+        .top-right {
+            right: 10px;
+        }
+
+        .top-left img, .top-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 鼠标悬停时的效果 */
+        .top-left:hover, .top-right:hover {
+            transform: scale(1.1); /* 放大 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+        }
+
+        .top-left:active, .top-right:active {
+            transform: scale(0.95); /* 点击时缩小 */
+        }
+
+        /* 主要容器 */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* Pokemon 名字和 Level */
+        .pokemon-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .pokemon-name {
+            font-size: 50px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .level {
+            background-color: #FFD700;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Pokemon 主要图片 */
+        .pokemon-image {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        /* 数据框 */
+        .data-box {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .data-box div {
+            text-align: center;
+            font-size: 18px;
+            width: 100px;
+        }
+
+        /* 进化部分 */
+        .evolution {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* 进化照片和名字 */
+        .evolution-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .evolution-box .stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .evolution-box img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 10px;
+        }
+
+        .evolution-box .stage-name {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .evolution-box .arrow {
+            width: 30px;
+            height: 30px;
+            transform: rotate(90deg);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .data-box {
+                flex-direction: column;
+            }
+
+            .evolution-box {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <!-- 左上角返回按钮 -->
+  <a href="index.html" class="top-left">
+    <img src="img/terug.png" alt="Back">
+  </a>
+
+  <!-- 右上角 Collection Page 按钮 -->
+  <a href="collection.html" class="top-right">
+    <img src="img/pikachu.avif" alt="Collection Page">
+  </a>
+
+    <div class="container">
+        <!-- Pokemon 名字和 Level -->
+        <div class="pokemon-header">
+            <div class="pokemon-name">Charmander</div>
+            <div class="level">Level 5</div>
+        </div>
+
+        <!-- Pokemon 照片和数据 -->
+        <img src="img/charmander.webp" alt="Charmander" class="pokemon-image">
+
+        <div class="data-box">
+            <div>Type: Fire</div>
+            <div>Height: 0.6 m</div>
+            <div>Weight: 8.5 kg</div>
+        </div>
+
+        <!-- 进化 -->
+        <div class="evolution">Evolution</div>
+
+        <div class="evolution-box">
+            <div class="stage">
+                <img src="img/charmander.webp" alt="Charmander First Stage">
+                <div class="stage-name">Charmander</div>
+            </div>
+
+            <img src="img/na boven.jpg" alt="Arrow" class="arrow">
+
+            <div class="stage">
+                <img src="img/Charmeleon.png" alt="Charmeleon">
+                <div class="stage-name">Charmeleon</div>
+            </div>
+
+            <img src="img/na boven.jpg" alt="Arrow" class="arrow">
+
+            <div class="stage">
+                <img src="img/Charizard.png" alt="Charizard">
+                <div class="stage-name">Charizard</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

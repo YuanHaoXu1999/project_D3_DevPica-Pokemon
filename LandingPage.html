@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        * {
+            background-color: #FFB770;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            width: 80vw;
+            /* 缩小整体尺寸 */
+            height: 80vh;
+            gap: 10px;
+            /* 让每个图片间隔更自然 */
+        }
+
+        .container a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            text-decoration: none;
+            border-radius: 10px;
+            /* 让超链接区域也有圆角 */
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+            border-radius: 20px;
+            /* 让图片本身有圆角 */
+        }
+
+        .container a:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 0 0 20px 20px;
+            /* 让遮罩层底部符合圆角形状 */
+        }
+
+        .container a:hover .overlay {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                width: 90vw;
+                height: 90vh;
+            }
+
+            .overlay {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, 1fr);
+                width: 95vw;
+                height: 95vh;
+            }
+
+            .overlay {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <a href="index.html">
+            <img src="img/fifa.png" alt="FIFA">
+            <div class="overlay">FIFA</div>
+        </a>
+        <a href="index.html">
+            <img src="img/fornite.png" alt="Fortnite">
+            <div class="overlay">Fortnite</div>
+        </a>
+        <a href="index.html">
+            <img src="img/lego master logo.jpg" alt="LEGO MASTERS OUT OF THE BOX">
+            <div class="overlay">LEGO MASTERS OUT OF THE BOX</div>
+        </a>
+        <a href="index.html">
+            <img src="img/lord of the rings online.jpg" alt="lord of the rings online">
+            <div class="overlay">lord of the rings online</div>
+        </a>
+        <a href="index.html">
+            <img src="img/Magic-The-Gathering-Logo.png" alt="Magic-The-Gathering-Logo">
+            <div class="overlay">Magic-The-Gathering-Logo</div>
+        </a>
+        <a href="index.html">
+            <img src="img/pokemon.jpg" alt="Pokemon">
+            <div class="overlay">Pokemon</div>
+        </a>
+    </div>
+
+</body>
+
+</html>
